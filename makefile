@@ -1,7 +1,6 @@
 all: SQL
-SQL: Main.o  Arreglo.o  Nodo.o  NodoArbol.o  TablaHash.o  Menu.o HashChar.o  Arbol.o ManejadorQuerys.o  Columna.o  Fila.o  HashEntero.o  HashDecimales.o
-	
-	g++  Main.o Estructura.o Nodo.0 NodoArbol.o TablaHash.o Menu.o Arbol.o ManejadorQuerys.o Columna.o Fila.o  HashEntero.o HashChar.o HashDecimales.o  -o SQL
+SQL: Main.o  Arreglo.o  Nodo.o  NodoArbol.o  TablaHash.o  Menu.o HashChar.o  Arbol.o ManejadorQuerys.o  Columna.o  Fila.o  HashEntero.o  HashDecimales.o HashString.o
+	g++ Main.o Arreglo.o Nodo.o NodoArbol.o TablaHash.o Menu.o HashChar.o Arbol.o ManejadorQuerys.o Columna.o Fila.o  HashEntero.o  HashDecimales.o -o SQL
 	./SQL
 
 Arreglo.o: Arboles/Arreglo.cpp
@@ -34,6 +33,9 @@ HashString.o: TablasHash/HashString.cpp
 HashChar.o: TablasHash/HashChar.cpp
 	g++ -c TablasHash/HashChar.cpp
 
+HashString.o: TablasHash/HashString.cpp
+	g++ -c TablasHash/HashString.cpp
+
 
 Menu.o: Clases/Menu.cpp
 	g++ -c Clases/Menu.cpp
@@ -46,8 +48,8 @@ ManejadorQuerys.o: Clases/ManejadorQuerys.cpp
 Columna.o: Clases/Columna.cpp
 	g++ -c Clases/Columna.cpp	
 
-Fila.o: Fila.cpp
-	g++ -c Fila.cpp	
+Fila.o: Clases/Fila.cpp
+	g++ -c Clases/Fila.cpp	
 
 clean:
 	rm -rf *.o SQL core
