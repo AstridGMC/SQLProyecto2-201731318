@@ -1,7 +1,7 @@
 all: SQL
-Solitario: Main.o Arreglo.o Nodo.o NodoArbol.o TablaHash.o Menu.o HashChar.o  Arbol.o ManejadorQuerys.o Columna.o Fila.o HashEntero.o  HashDecimales.o
+SQL: Main.o  Arreglo.o  Nodo.o  NodoArbol.o  TablaHash.o  Menu.o HashChar.o  Arbol.o ManejadorQuerys.o  Columna.o  Fila.o  HashEntero.o  HashDecimales.o
 	
-g++  Main.o Estructura.o Nodo.0 NodoArbol.o TablaHash.o Menu.o Arbol.o ManejadorQuerys.o Columna.o Fila.o  HashEntero.o HashChar.o HashDecimales.o  -o SQL
+	g++  Main.o Estructura.o Nodo.0 NodoArbol.o TablaHash.o Menu.o Arbol.o ManejadorQuerys.o Columna.o Fila.o  HashEntero.o HashChar.o HashDecimales.o  -o SQL
 	./SQL
 
 Arreglo.o: Arboles/Arreglo.cpp

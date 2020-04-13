@@ -35,7 +35,7 @@ void Menu::MenuOpciones(){
     cout<<"         3.Ver Graficas de las Estructruras \n";
     cin>> opcion2;
     switch(opcion2){
-        case 1:// Mover Carta
+        case 1:
             cout<<"\n    Has elegido Ejecutar una Query\n";
             MenuQuerys();
             break;

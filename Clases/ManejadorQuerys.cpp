@@ -1,5 +1,7 @@
 #include "ManejadorQuierys.h"
+#include "Columna.h"
 
+class Columna;
 string ManejadorQuerys:: seleccionarNombreTabla(vector<string> milista){
     string nombreTabla= NULL;
     if (milista.at(1)=="*"){
