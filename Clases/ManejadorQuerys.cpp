@@ -128,3 +128,9 @@ string  ManejadorQuerys:: crearTabla(vector<string> miLista){
         return "No se ha podido crear la nueva Columna";
     }
 }
+
+void ManejadorQuerys::   ListarTablas(){
+    for(int i = 0 ; i< tablas.size(); i++){
+        cout << i <<":" <<tablas.at(i).nombre;
+    }
+}

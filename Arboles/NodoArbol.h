@@ -12,7 +12,7 @@ class NodoArbol{
     int altura;
     NodoArbol *derecho;
     NodoArbol *izquierdo;
-    NodoArbol *crearNodo(float miDato, int idNodo);
+    NodoArbol *crearNodo(float miDato, int idNodo, int altura);
    // void InsertarNodo(NodoArbol  *&miArbol, float dato);
 };
 #endif 

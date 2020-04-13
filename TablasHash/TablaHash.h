@@ -19,6 +19,7 @@ class TablaHash{
    TablaHash crearTablaHash(string miNombre);
    void setArreglo(Arreglo arreglo);
    void setTipo(string tipo);
+   int CalcularNumeroDatos(TablaHash hash);
 };
 
 #endif

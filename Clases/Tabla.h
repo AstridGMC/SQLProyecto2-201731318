@@ -18,6 +18,7 @@ class Tabla{
     void setColumnas(vector<Columna> columnas1);
     void ingresarCol(TablaHash miTabla);
     Tabla buscarTabla(vector<Tabla> tablasABuscar, string nombreTabla);
+    int CantidadDatosTabla(vector<TablaHash> MisTablasHash);
     string  getNombre();
     vector<Columna>  getColumnas();
     Tabla AgregarColumnas(vector<Columna> columnas, string nombreTabla);

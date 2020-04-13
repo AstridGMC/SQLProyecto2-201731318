@@ -1,7 +1,6 @@
 #include "Tabla.h"
 #include "../TablasHash/TablaHash.h"
 
-class TablaHash;
 Tabla Tabla:: AgregarColumnas(vector<Columna> columnas1, string nombreTabla){
     Tabla tabla = Tabla();
     vector<TablaHash> tablasH;
@@ -46,6 +45,18 @@ Tabla Tabla:: buscarTabla(vector<Tabla> tablasABuscar, string nombreTabla){
         }
     }
     return tablaEncontrada;
+}
+
+int CantidadDatosTabla(vector<TablaHash> MisTablasHash){
+    int cantidad;
+
+    for (int i = 0; i < MisTablasHash.size(); i++)
+    {
+        TablaHash miTaba = MisTablasHash.at(i);
+        cantidad = cantidad+ miTaba.CalcularNumeroDatos( miTaba);
+    }
+    
+    return cantidad;
 }
 
 void Tabla:: setNombre(string Nombre){

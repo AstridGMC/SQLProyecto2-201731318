@@ -20,6 +20,7 @@ class ManejadorQuerys{
     vector<Fila> separarColumnasAInsertar(vector<string> milista);
     bool AgregarColumnas(vector<string>);
     void InsertarFilas(vector<string> );
+    void ListarTablas();
     vector<string>  split(string str, char pattern);
 };
 #endif

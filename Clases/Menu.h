@@ -6,9 +6,13 @@
 #include <string>
 #include <iostream>
 #include "ManejadorQuierys.h"
+#include "../Graphs/creadorArchivos.h"
+#include "../Graphs/CreaGraficador.h"
 
 
 class Menu{
+    CreadorArchivos creadorArchivo = CreadorArchivos();
+    CreaGraficador graficaaTabla = CreaGraficador();
     public:
         Menu();
         Menu(const Menu& orig);

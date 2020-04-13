@@ -23,6 +23,10 @@ Arbol Arreglo :: ObtenerPrimero(){
     return frente->dato;
 }
 
+Nodo* Arreglo :: ObtenerPrimerNodo(){
+    return frente;
+}
+
 void Arreglo::sacarElementoCola(Nodo *&, Nodo *&, Arbol arbol){
     arbol = frente -> dato;
     Nodo *auxiliar = frente;

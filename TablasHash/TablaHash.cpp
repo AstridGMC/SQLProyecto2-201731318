@@ -31,3 +31,13 @@ TablaHash  TablaHash :: BuscarTablaHash(vector<TablaHash> tablas, string nombreT
     return tablaEncontrada;
  }
 
+int TablaHash :: CalcularNumeroDatos(TablaHash hash){
+   int numeroDatos = 0;
+      Nodo* nodo = hash.arregloHash.ObtenerPrimerNodo();
+      for (int i = 0; i < hash.arregloHash.obtenerTam(); i++)
+      {
+         NodoArbol* raiz=  hash.arregloHash.obtenerNodoPorIndice(nodo , i)->dato.raiz;
+         numeroDatos= numeroDatos + hash.arregloHash.obtenerNodoPorIndice(nodo , i)->dato.calcularNumeroDatos(0 , raiz );
+      }
+      return numeroDatos;
+}

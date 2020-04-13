@@ -8,7 +8,7 @@ class HashEntero   {
     
     void Rehashing();
     public:
-    int ElegirIndice(int decimal);
+    int ElegirIndice(int entero);
     HashEntero  crearTablaHash(string miNombre);
 };
 

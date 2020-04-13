@@ -10,6 +10,7 @@ class Arreglo {
         void sacarElementoCola(Nodo *&, Nodo *&, Arbol arbol);
         Arbol ObtenerPrimero();
         int obtenerTam();
+        Nodo* ObtenerPrimerNodo();
         Nodo* obtenerNodoPorIndice(Nodo *nodo,int indice);
         ~Arreglo();
     private:

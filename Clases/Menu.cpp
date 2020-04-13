@@ -97,6 +97,7 @@ void Menu:: MenuQuerys(){
 }
 
 void Menu:: MenuReportes(){
+    int opcionTabla = 0;
     cout<<"---------------MENU REPORTES---------------\n";
     cout<<"         1.Cantidad de datos en todas las bases de datos\n";
     cout<<"         2.Cantidad de datos en una tabla\n";
@@ -107,9 +108,14 @@ void Menu:: MenuReportes(){
     cin>> opcion;
     switch(opcion){
         case 1: 
-            cout<<"         la cantidad de datos es:";
+            
             break;
         case 2:
+            cout<<"\escriba el numero de la tabla que desea ver?  :\n";
+            manejador.ListarTablas();
+            cin >> opcionTabla;
+            manejador.tablas.at(opcion);
+            cout<<"         la cantidad de datos es:   " << manejador.tablas.at(opcion).CantidadDatosTabla(manejador.tablas.at(opcion).tablasHash);
             break;
         case 3:
             cout<<"\nQue tabla desea ver?:\n";
@@ -128,18 +134,31 @@ void Menu:: MenuReportes(){
 }
 
 void Menu :: MenuGraficas(){
+    int opcionGrafica;
     cout<<"---------------MENU GRAFICAS---------------\n";
     cout<<"         1. Ver estructuras por tablas\n";
     cout<<"         1. Ver estructura completa\n";
-    cout<<"         3. ver por fila";
+    cout<<"         3. ver por fila"; 
     cout<<"         Regresar <--";
     cin>> opcion;
     switch(opcion){
         case 1: 
+            cout<<"\escriba el numero de la tabla que desea ver?  :\n";
+            manejador.ListarTablas();
+            cin >> opcionGrafica;
+            creadorArchivo. generarImagen( graficaaTabla.crearContenidoPorTabla(manejador.tablas.at(opcionGrafica)));
             break;
         case 2:
+            creadorArchivo. generarImagen( graficaaTabla.crearContenidoPorTabla(manejador.tablas.at(opcionGrafica)));
             break;
         case 3:
+            cout<<"\escriba el numero de la tabla que desea ver?  :\n";
+            manejador.ListarTablas();
+            cin >> opcionGrafica;
+            cout<< "has Elegido ver la tabla   "<< manejador.tablas.at(opcion).nombre;
+            int opcionFila =0;
+            cin>> opcionFila;
+            creadorArchivo. generarImagen( graficaaTabla.crearContenidoPorTabla(manejador.tablas.at(opcionGrafica)));
             break;
         default:// MenuPrincipal 
             MenuReportes();

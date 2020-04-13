@@ -4,7 +4,9 @@
 void Arbol:: InsertarNodo( NodoArbol *&arbol, float dato, int idNodo){
     if(arbol == NULL){
         NodoArbol *nuevoNodo;
-        nuevoNodo = nuevoNodo->crearNodo(dato, idNodo);
+        nuevoNodo = nuevoNodo->crearNodo(dato, idNodo,altura);
+        raiz = nuevoNodo;
+        altura ++;
          AlturaCalcular (arbol) ;
     }else{
         float valorRaiz = arbol->dato;
@@ -143,3 +145,18 @@ if (r!=NULL){
         imprimirArbolPostorden(r->derecho);
     }
  }
+
+int Arbol:: calcularNumeroDatos(int contador, NodoArbol* raiz1){
+    if (raiz1!=NULL){
+        contador++;
+        calcularNumeroDatos(contador,raiz1->izquierdo);
+        calcularNumeroDatos(contador , raiz1-> derecho);
+    }else{
+        return contador;
+    }
+}
+
+NodoArbol* Arbol:: obtenerRaiz(){
+    return raiz;
+}
+ 
