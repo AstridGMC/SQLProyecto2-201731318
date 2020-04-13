@@ -1,28 +1,5 @@
-#include "../TablasHash/TablaHash.cpp"
-#include "Columna.cpp"
-#include <cstdlib>
-#include <vector>
-#include <string>
-#include <iostream>
+#include "Menu.h"
 using namespace std;
-class Columna;
-class TablaHash;
-class Menu
-{
-    public:
-        Menu();
-        Menu(const Menu& orig);
-        void MenuPrincipal();
-        void MenuOpciones();
-        void MenuQuerys();
-        void MenuReportes();
-        void MenuGraficas();
-        vector<string> split(string str, char pattern);
-        bool validadCreate(vector<string> input);
-        virtual ~Menu();
-    private:
-    int opcion;
-};
 
 Menu::Menu() {
 }
@@ -34,7 +11,7 @@ Menu::~Menu() {
 }
 
 void Menu::MenuPrincipal(){
-    cout<<"---------------BIENVENIDO BASE DE DATOS---------------\n";
+    std::cout<<"---------------BIENVENIDO BASE DE DATOS---------------\n";
     cout<<"\n";
     cout << "presione 1 para ingresar al menu principal\n";
     cin>> opcion;
@@ -87,20 +64,26 @@ void Menu:: MenuQuerys(){
     switch(opcion){
         case 1:// Menu Querys 
             cout << "   Has elegido Crear una Tabla\n";
-            cout<<" Ej. CREATE TABLE nombreTabla ( campo tipoDato, . . . .)\n";
-            cin>> imput;
+            cout<<" Ej. CREATE TABLE nombreTabla ( campo tipoDato, . . . . ) \n";
+            cout<<"Es importante respetar los espacios \n";
+            getline(cin, imput, '\n');
             milista = split(imput,' ');
+            cout<<manejador.crearTabla(milista);
             break;
         case 2:
             cout << "   Has elegido Hacer una Insercion\n";
-            cout<<" Ej: SELECT nombre FROM usuarios WHERE edad = 30 \n  SELECT * FROM usuarios WHERE edad = 10\n\n";
-            cin>> imput;
+            cout<<"Ej. INSERT INTO table ( a, b, c) VALUES ( 1, 2, 3 ) ; \n";
+            cout<<"Es importante respetar los espacios \n";
+            getline(cin, imput, '\n');
             milista = split(imput,' ');
+            
             break;
         case 3:
             cout << "   Has elegido Realizar una busqueda\n";
-            cout<<"Ej. INSERT INTO table (a,b,c) VALUES (1,2,3);\n";
-            cin>> imput;
+            cout<<" Ej: SELECT nombre FROM usuarios WHERE edad = 30 \n  SELECT * FROM usuarios WHERE edad = 10\n\n";
+            cout<<"Es importante respetar los espacios \n";
+        
+            getline(cin, imput, '\n');
             milista = split(imput,' ');
             break;
         case 4:
@@ -144,7 +127,7 @@ void Menu:: MenuReportes(){
     }
 }
 
-void Menu:: MenuGraficas(){
+void Menu :: MenuGraficas(){
     cout<<"---------------MENU GRAFICAS---------------\n";
     cout<<"         1. Ver estructuras por tablas\n";
     cout<<"         1. Ver estructura completa\n";
@@ -164,7 +147,7 @@ void Menu:: MenuGraficas(){
         }
     }
 
-vector<string> Menu::  split(string str, char pattern) {
+vector<string> Menu ::  split(string str, char pattern) {
 
     int posInit = 0;
     int posFound = 0;
@@ -181,8 +164,8 @@ vector<string> Menu::  split(string str, char pattern) {
     return resultados;
 }
 
-bool Menu:: validadCreate(vector<string>  input){
-    while(input.max_size){
+bool Menu:: validarCreate(vector<string>  input){
+    while(input.max_size()){
 
     }
 }

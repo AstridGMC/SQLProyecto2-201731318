@@ -1,38 +1,18 @@
-#include<stdlib.h>
-using namespace std;
-#include <iostream>
-#include "NodoArbol.cpp"
-#include <algorithm>    // std::max
-class NodoArbol;
-class Arbol{
-    float dato;
-    public:
-    void InsertarNodo( NodoArbol *&arbol, float dato);
-    void Balancear(NodoArbol *t);
-    void imprimirArbol(Arbol *arbol, int contador());
-    int Altura(NodoArbol *t);
-    void AlturaCalcular (NodoArbol* t);
-    NodoArbol* rotacionizquierda(NodoArbol* t);
-    NodoArbol* rotacionderecha(NodoArbol* t);
-    NodoArbol* rotaciondobleizq(NodoArbol *c);
-    NodoArbol* rotaciondobleder(NodoArbol *c);
-    void  imprimirArbolInorden(NodoArbol *r);
-    void imprimirArbolPreorden(NodoArbol *r);
-    void imprimirArbolPostorden(NodoArbol *r);
-};
+#include "Arbol.h"
 
-void Arbol:: InsertarNodo( NodoArbol *&arbol, float dato){
+
+void Arbol:: InsertarNodo( NodoArbol *&arbol, float dato, int idNodo){
     if(arbol == NULL){
         NodoArbol *nuevoNodo;
-        nuevoNodo = nuevoNodo->crearNodo(dato);
+        nuevoNodo = nuevoNodo->crearNodo(dato, idNodo);
          AlturaCalcular (arbol) ;
     }else{
         float valorRaiz = arbol->dato;
          AlturaCalcular (arbol) ;
         if(dato <valorRaiz){
-            InsertarNodo(arbol->izquierdo,dato);
+            InsertarNodo(arbol->izquierdo,dato, idNodo);
         }else{
-            InsertarNodo(arbol->derecho, dato);
+            InsertarNodo(arbol->derecho, dato, idNodo);
         }
     }
 }

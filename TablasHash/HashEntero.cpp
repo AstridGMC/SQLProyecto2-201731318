@@ -1,10 +1,19 @@
-class HashEntero{
-    int tamTabla=20;
+
+#include <string>
+
+class HashEntero   {
+    int tamTabla=15;
+    int datosAlmacenados;
     private:
-    int ElegirIndice(int entero);
+    
+    void Rehashing();
+    public:
+    int ElegirIndice(int decimal);
+    HashEntero  crearTablaHash(string miNombre);
 };
 
 int HashEntero ::  ElegirIndice(int entero){
     int indice = ((int)entero)%(tamTabla);
     return indice;
 }
+
