@@ -1,9 +1,15 @@
 #include "creadorArchivos.h"
+
+#include <fstream>
+#include <string> 
 #include <cstdlib>
+#include <vector>
+using namespace std;
+
 
 string CreadorArchivos:: EscribirArchivo(string archivo){
     string nombreArch = "grafica.dot";
-   ofstream fs(nombreArch);
+    ofstream fs(nombreArch);
 
     for (int i = 0; i < archivo.size(); i++)
     {
@@ -17,5 +23,5 @@ string CreadorArchivos:: EscribirArchivo(string archivo){
 void  CreadorArchivos:: generarImagen(string archivo){
     string path = EscribirArchivo( archivo);
     system("dot -Tpng grafica.dot -o imagen.png");
-    system("nohum dysplay imagen.png")
+    system("nohum dysplay imagen.png");
 }

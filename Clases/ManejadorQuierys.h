@@ -4,9 +4,13 @@
 #include <string>
 #include <iostream>
 #include "Fila.h"
-#include "Tabla.h"
+#include "../Arboles/NodoArbol.h"
+#include "Columna.h"
 #include <cstdlib>
 using namespace std;
+
+class NodoArbol;
+class Fila;
 
 class ManejadorQuerys{
     public:

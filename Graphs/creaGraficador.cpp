@@ -1,14 +1,25 @@
 #include "CreaGraficador.h"
-#include <iostream>
-#include <sstream>
-#include <string>     // std::string, std::stof
 
+#include "../Clases/Tabla.h"
+#include "../Arboles/Nodo.h"
+#include "../TablasHash/TablaHash.h"
+#include "../Arboles/Arbol.h"
+
+#include <string> 
+#include <cstdlib>
+#include <vector>
+using namespace std;
+
+   // std::string, std::stof
+class Tabla;
+class Arbol;
+class Nodo;
+class TablaHash;
 
 string CreaGraficador :: crearContenidoPorTabla(Tabla tabla){
-
     string alinear = "node [shape=record,height=.1,heigt = .1,fontsize=11];\n rankdir = LR";
     contenidoArchivo = contenidoArchivo + alinear;
-    for(int i=0 ;tabla.tablasHash.size;i++){
+    for(int i=0 ;tabla.tablasHash.size();i++){
         alinear= alinear + crearHash(tabla.tablasHash);
     }
 }
@@ -18,8 +29,8 @@ string CreaGraficador:: crearHash(std::vector<TablaHash> tablas){
     tablaNodos = tablaNodos + "nodo() \n [label = \" ";
     for(int i=0 ; tablas.size(); i++){
         TablaHash tabla = tablas.at(i);
-        Nodo* nodo =  tabla.arregloHash.ObtenerPrimero;
-        for(int j=0; j= tabla.arregloHash.obtenerTam; j++){
+        Nodo* nodo =  tabla.arregloHash.ObtenerPrimerNodo();
+        for(int j=0; j= tabla.arregloHash.obtenerTam(); j++){
             tablaNodos = tablaNodos + "< Nodo" +std::to_string(j) + " > |";
         }
     }

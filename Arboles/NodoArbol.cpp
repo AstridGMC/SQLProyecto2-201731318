@@ -1,5 +1,6 @@
 #include "NodoArbol.h"
 
+
 NodoArbol* NodoArbol:: crearNodo(float miDato, int miIdNodo, int altura ){
     NodoArbol *nuevoNodo = new  NodoArbol();
     nuevoNodo->dato = miDato;

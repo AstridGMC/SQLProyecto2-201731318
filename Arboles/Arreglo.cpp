@@ -1,15 +1,18 @@
 #include "Arreglo.h"
-class Nodo;
-Arreglo::  Arreglo(){
 
-}
+#include "Nodo.h"
+#include "Arbol.h"
+
+class Nodo;
+class Arbol;
+
 
 bool Arreglo:: ArregloVacio(Nodo *frente){
     return (frente == nullptr)? true : false;
 } 
 
-void Arreglo::insertarArreglo(Nodo *&frente, Nodo *&fin ,Arbol arbol){
-    Nodo *nuevoNodo = new Nodo();
+void Arreglo:: insertarArreglo(Nodo *&frente, Nodo *&fin ,Arbol arbol){
+    Nodo *nuevoNodo;
     nuevoNodo -> dato = arbol;
     nuevoNodo->siguiente = nullptr;
     if(ArregloVacio(frente)){
@@ -60,7 +63,7 @@ Nodo* Arreglo:: obtenerNodoPorIndice(Nodo *head, int i) {
 }
 
 
-Arreglo::~Arreglo()
+Arreglo:: ~Arreglo()
 {
     while(frente != nullptr){
         sacarElementoCola(frente, fin, ObtenerPrimero());

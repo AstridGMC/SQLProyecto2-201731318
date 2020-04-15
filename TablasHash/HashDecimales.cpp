@@ -1,15 +1,4 @@
-
-
-class HashDecimales  {
-    int tamTabla=15;
-    int datosAlmacenados;
-    private:
-    
-    void Rehashing();
-    public:
-    int ElegirIndice(float decimal);
-    HashDecimales crearTablaHash(string miNombre);
-};
+#include "HashDecimales.h"
 
 
 int HashDecimales ::  ElegirIndice(float decimal){

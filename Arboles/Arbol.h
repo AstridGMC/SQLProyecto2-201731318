@@ -5,7 +5,7 @@
 #include <algorithm>    // std::max
 #include "NodoArbol.h"
 using namespace std;
-
+class NodoArbol;
 class Arbol{
     
     public:
@@ -29,3 +29,4 @@ class Arbol{
 };
 
 #endif
+

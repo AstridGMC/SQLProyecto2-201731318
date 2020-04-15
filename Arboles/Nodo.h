@@ -2,6 +2,7 @@
 #define NODO
 
 #include "Arbol.h"
+class Arbol;
 
 class Nodo {
 public:

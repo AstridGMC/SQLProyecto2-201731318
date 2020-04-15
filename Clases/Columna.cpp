@@ -1,5 +1,9 @@
-
 #include "Columna.h"
+#include "../TablasHash/TablaHash.h"
+#include <string>
+#include <vector>
+using namespace std;
+class TablaHash;
 
 int Columna:: BuscarColumna(string nombreCol, vector<TablaHash> columnas){
     int numColumna;

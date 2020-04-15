@@ -1,6 +1,10 @@
+#ifndef CREADORARCHIVOS
+#define CREADORARCHIVOS
+
 #include <iostream>  
 #include <string.h>
 #include <fstream>
+#include <cstdlib>
 using namespace std;
 
 class CreadorArchivos{
@@ -9,3 +13,5 @@ class CreadorArchivos{
     string EscribirArchivo(string archivo);
     void generarImagen(string archivo);
 };
+
+#endif

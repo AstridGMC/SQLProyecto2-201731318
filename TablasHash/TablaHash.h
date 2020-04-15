@@ -5,8 +5,9 @@
 #include <cstdlib>
 #include <vector>
 #include "../Arboles/Arreglo.h"
-#include "../Arboles/Arbol.h"
+
 using namespace std;
+class Arreglo;
 
 class TablaHash{
    public:

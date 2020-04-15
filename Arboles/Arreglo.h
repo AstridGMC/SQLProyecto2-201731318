@@ -2,9 +2,9 @@
 #define ARREGLO
 #include "Nodo.h"
 using namespace std;
+class Nodo;
 class Arreglo {
     public:
-        Arreglo();
         void insertarArreglo(Nodo *&, Nodo *&, Arbol arbol);
         bool ArregloVacio(Nodo *);
         void sacarElementoCola(Nodo *&, Nodo *&, Arbol arbol);

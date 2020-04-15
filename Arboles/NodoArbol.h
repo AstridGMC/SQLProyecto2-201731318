@@ -2,7 +2,6 @@
 #define NODOARBOL
 #include <cstddef>
 #include <type_traits>
-
 using namespace std;
 
 class NodoArbol{

@@ -1,17 +1,22 @@
 #ifndef TABLA
 #define TABLA
+
 #include <string>
-#include <cstdlib>
 #include <vector>
-#include "../TablasHash/TablaHash.h"
 #include "Columna.h"
+#include <cstdlib>
+#include <iostream> 
+#include "../TablasHash/TablaHash.h"
 using namespace std;
- 
+
+class TablaHash;
+class Columna;
+
 class Tabla{
+
     
-    vector<Columna> columnas;
-    //vector<TablaHash> tablasHash1;
     public:
+    vector<Columna> columnas;
     string nombre;
     vector<TablaHash> tablasHash;
     void  setNombre(string Nombre);
@@ -25,3 +30,4 @@ class Tabla{
 };
 
 #endif 
+

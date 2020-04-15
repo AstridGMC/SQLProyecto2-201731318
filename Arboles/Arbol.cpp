@@ -1,9 +1,15 @@
 #include "Arbol.h"
+#include "NodoArbol.h"
+
+#include <iostream>
+
+using namespace std;
+class NodoArbol;
 
 
 void Arbol:: InsertarNodo( NodoArbol *&arbol, float dato, int idNodo){
     if(arbol == NULL){
-        NodoArbol *nuevoNodo;
+        NodoArbol *nuevoNodo = new NodoArbol();
         nuevoNodo = nuevoNodo->crearNodo(dato, idNodo,altura);
         raiz = nuevoNodo;
         altura ++;

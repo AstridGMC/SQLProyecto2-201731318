@@ -4,9 +4,10 @@ void TablaHash:: setTipo(string miTipo){
       tipo = miTipo;
 }
 
-TablaHash:: TablaHash(){
+TablaHash :: TablaHash(){
     
 }
+
 TablaHash TablaHash :: crearTablaHash(string miNombre){
     nombre = miNombre;
     TablaHash tabla = TablaHash();

@@ -1,24 +1,32 @@
 #ifndef FILA
 #define FILA
-#include <string>
+
+#include "../Arboles/NodoArbol.h"
 #include "Tabla.h"
-#include "../Arboles/Arbol.h"
-#include "../TablasHash/HashChar.cpp"
-#include "../TablasHash/HashEntero.cpp"
-#include "../TablasHash/HashString.cpp"
-#include "../TablasHash/HashDecimales.cpp"
+#include "../TablasHash/HashChar.h"
+#include "../TablasHash/HashEntero.h"
+#include "../TablasHash/HashString.h"
+#include "../TablasHash/HashDecimales.h"
+#include <string> 
+#include <vector>
 using namespace std;
 
+class NodoArbol;
+class HashChar;
+class HashEntero;
+class HashString;
+class HashDecimales;
+class Tabla;
+
 class  Fila {
-private:
-    /* data */
 public:
+   
+    int identificador;
+    void AgregarFilasTabla( vector<Fila> filas, NodoArbol *&, vector<Tabla> tablas, string nombre);
     string nombre;
     string dato;
     string tipo;
-    int identificador;
-    void AgregarFilasTabla( vector<Fila> filas, NodoArbol *&, vector<Tabla> tablas, string nombre);
-     Fila(/* args */);
+     Fila( );
     ~ Fila();
 };
 #endif 
