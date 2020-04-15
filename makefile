@@ -51,3 +51,8 @@ Tabla.o: Clases/Tabla.cpp
 creaGraficador.o: Graphs/creaGraficador.cpp
 	g++ -c Graphs/creaGraficador.cpp
 
+creadorArchivos.o: Graphs/creadorArchivos.cpp
+	g++ -c Graphs/creadorArchivos.cpp
+
+clean:
+	rm -rf *.o SQL core
