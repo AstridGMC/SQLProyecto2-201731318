@@ -27,34 +27,29 @@ string ManejadorQuerys:: seleccionarNombreTabla(vector<string> milista){
 vector<Columna> ManejadorQuerys:: seleccionarColumnasTabla(vector<string> milista){
     vector<Columna> columnas;
     int contador =8;
-    for(int i = 0 ; i < milista.size(); i+=2){
-        cout<< i << "\n";
-        if(i< milista.size()){
-            string palabra = split(milista.at(i), ',' ).at(0);
-            // cout<< palabra << "\n";
-            if(palabra == "("){
-                contador = i;
-            }else if(palabra == ")" || palabra == ");" ){
-                contador = -1;
-                cout<< palabra << "   ))))))))))))))"<< contador <<"\n";
-            }
-            
-            if(milista.at(i) != ")"  || milista.at(i) != ");" ){
-                int valid = i+1;
-                if((valid) = milista.size()){
-                    cout<< palabra << "\n";
-                    Columna columna = Columna();
-                    columna.nombre= palabra;
-                    columna.tipo = milista.at(i+1);
-                    cout<< milista.at(i+1) << "\n";
-                    columnas.push_back(columna);
-                } 
-            }
+    for(int i = 4 ; i < milista.size();i=i+2){
+        //cout<< i<< "\n";
+        string palabra = split(milista.at(i), ',' ).at(0);
+       // cout<< palabra << "\n";
+        if(milista.at(i)  == "," ){
+            i = i+1;
+           // cout << "Coma   "<< i<< "\n";
+        }else if(palabra == "("){
+            contador = i;
+        }else if(palabra == ")" || palabra == ");"){
+            contador = -1;
+        }else if(contador > -1){ 
+            //cout<< palabra << "\n";
+            Columna columna = Columna();
+            columna.nombre= milista.at(i);
+            columna.tipo = split(milista.at(i+1), ',' ).at(0);
+            columnas.push_back(columna);
         }
     }
-    cout << "fin";
     return columnas;
 }
+
+
 // union de la lista de columnas a hacer la insercion
 vector<Fila> ManejadorQuerys:: seleccionarFilasTabla(vector<string> milista1, vector<string> milista2){
     vector<Fila> filas;
@@ -107,11 +102,12 @@ vector<Fila> ManejadorQuerys :: separarColumnasAInsertar(vector<string> milista)
 bool ManejadorQuerys:: AgregarColumnas(vector<string> milista){
     if(milista.size()>0){
         string nombre = seleccionarNombreTabla(milista);
-        cout << nombre;
         vector<Columna> Columnas1 = seleccionarColumnasTabla(milista);
-        cout << Columnas1.size();
         Tabla tabla;
-        tabla = tabla.AgregarColumnas(Columnas1 , nombre);
+        vector<TablaHash> tablasH = tabla.AgregarColumnas(Columnas1 , nombre);
+        tabla.tablasHash = tablasH;
+        tabla.nombre = nombre;
+        cout<< tabla.getNombre()<< tabla.tablasHash.size();
         tablas.push_back(tabla);
         return true;
     }else{
@@ -145,14 +141,16 @@ void ManejadorQuerys:: InsertarFilas( vector<string> lista){
 
 string  ManejadorQuerys:: crearTabla(vector<string> miLista){
     if (AgregarColumnas( miLista)){
-        return "Se Ha creado La Nueva Tabla";
+        return "\nSe Ha creado La Nueva Tabla\n";
     }else{
-        return "No se ha podido crear la nueva Columna";
+        return "\n No se ha podido crear la nueva Columna\n";
     }
 }
 
 void ManejadorQuerys::   ListarTablas(){
+    cout<< tablas.size();
     for(int i = 0 ; i< tablas.size(); i++){
-        cout << i <<":" <<tablas.at(i).nombre;
+        int indice = i+1;
+        cout << indice <<":" << tablas.at(i).getNombre()<<"\n";
     }
 }

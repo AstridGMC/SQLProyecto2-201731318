@@ -12,7 +12,7 @@ class Arreglo {
         int obtenerTam();
         Nodo* ObtenerPrimerNodo();
         Nodo* obtenerNodoPorIndice(Nodo *nodo,int indice);
-        ~Arreglo();
+        //~Arreglo();
     private:
         Nodo *frente;
         Nodo *fin;

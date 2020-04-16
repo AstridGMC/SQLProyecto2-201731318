@@ -6,15 +6,13 @@
 #include "Columna.h"
 #include <cstdlib>
 #include <iostream> 
+#include "../Clases/Columna.h"
 #include "../TablasHash/TablaHash.h"
 using namespace std;
 
-class TablaHash;
 class Columna;
 
 class Tabla{
-
-    
     public:
     vector<Columna> columnas;
     string nombre;
@@ -26,7 +24,7 @@ class Tabla{
     int CantidadDatosTabla(vector<TablaHash> MisTablasHash);
     string  getNombre();
     vector<Columna>  getColumnas();
-    Tabla AgregarColumnas(vector<Columna> columnas, string nombreTabla);
+    vector<TablaHash> AgregarColumnas(vector<Columna> columnas, string nombreTabla);
 };
 
 #endif 

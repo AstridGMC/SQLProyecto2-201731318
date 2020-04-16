@@ -5,8 +5,10 @@
 #include <cstdlib>
 #include <vector>
 #include "../Arboles/Arreglo.h"
-
+#include "../Arboles/Nodo.h"
+#include "../Arboles/Arbol.h"
 using namespace std;
+
 class Arreglo;
 
 class TablaHash{
@@ -15,12 +17,12 @@ class TablaHash{
    int tamTabla =20;
    string tipo;
    string nombre;
-   TablaHash();
    TablaHash BuscarTablaHash(vector<TablaHash>, string tabla);
-   TablaHash crearTablaHash(string miNombre);
+   TablaHash crearTablaHash(string miNombre, string tip);
    void setArreglo(Arreglo arreglo);
    void setTipo(string tipo);
    int CalcularNumeroDatos(TablaHash hash);
+   //TablaHash();
 };
 
 #endif

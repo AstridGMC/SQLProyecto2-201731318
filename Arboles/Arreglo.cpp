@@ -8,18 +8,19 @@ class Arbol;
 
 
 bool Arreglo:: ArregloVacio(Nodo *frente){
-    return (frente == nullptr)? true : false;
+    return (frente == NULL)? true : false;
 } 
 
-void Arreglo:: insertarArreglo(Nodo *&frente, Nodo *&fin ,Arbol arbol){
-    Nodo *nuevoNodo;
+void Arreglo:: insertarArreglo(Nodo *&frente1, Nodo *&fin1 ,Arbol arbol){
+    Nodo *nuevoNodo = new Nodo();
     nuevoNodo -> dato = arbol;
-    nuevoNodo->siguiente = nullptr;
-    if(ArregloVacio(frente)){
-        frente = nuevoNodo;
+    nuevoNodo->siguiente = NULL;
+    if(ArregloVacio(frente1)){
+        frente1 = nuevoNodo ;
     }else{
-        fin->siguiente = nuevoNodo;
+        fin1->siguiente = nuevoNodo;
     }
+    fin1 = nuevoNodo;
 }
 
 Arbol Arreglo :: ObtenerPrimero(){
@@ -34,8 +35,8 @@ void Arreglo::sacarElementoCola(Nodo *&, Nodo *&, Arbol arbol){
     arbol = frente -> dato;
     Nodo *auxiliar = frente;
     if(frente == fin){
-        frente == nullptr;
-        fin = nullptr;
+        frente == NULL;
+        fin = NULL;
     }else{
         frente = frente->siguiente;
     }
@@ -44,7 +45,7 @@ void Arreglo::sacarElementoCola(Nodo *&, Nodo *&, Arbol arbol){
 
 int Arreglo:: obtenerTam(){
     int i = 0;
-     while(frente != nullptr){
+     while(frente != NULL){
         i++;
     }
     return i;
@@ -62,12 +63,3 @@ Nodo* Arreglo:: obtenerNodoPorIndice(Nodo *head, int i) {
     //current->data = new_data;
 }
 
-
-Arreglo:: ~Arreglo()
-{
-    while(frente != nullptr){
-        sacarElementoCola(frente, fin, ObtenerPrimero());
-    }
-    delete frente;
-    delete fin;
-}

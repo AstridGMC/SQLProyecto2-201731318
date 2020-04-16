@@ -5,6 +5,14 @@
 using namespace std;
 class TablaHash;
 
+Columna:: Columna(string nom, string tip){
+    nombre = nom;
+    tipo = tip;
+}
+
+Columna:: Columna(){
+}
+
 int Columna:: BuscarColumna(string nombreCol, vector<TablaHash> columnas){
     int numColumna;
     for(int i=0; i< columnas.size(); i++){
@@ -17,3 +25,11 @@ int Columna:: BuscarColumna(string nombreCol, vector<TablaHash> columnas){
     return numColumna;
 }
 
+
+void Columna:: setNombre(string nom){
+    nombre = nom;
+}
+
+void Columna:: setTipo( string tip){
+    tipo = tip;
+}

@@ -92,6 +92,7 @@ void Menu:: MenuQuerys(){
             cin.ignore();
             getline(cin, imput, '\n');
             milista = split(imput,' ');
+            //manejador.InsertarFilas(milista);
             MenuQuerys();
             break;
         case '3':
@@ -116,7 +117,7 @@ void Menu:: MenuQuerys(){
 void Menu:: MenuReportes(){
     char opcionR;
     int opcionTabla = 0;
-    cout<<"---------------MENU REPORTES---------------\n";
+    cout<<"\n---------------MENU REPORTES---------------\n";
     cout<<"         1.Cantidad de datos en todas las bases de datos\n";
     cout<<"         2.Cantidad de datos en una tabla\n";
     cout<<"         3.Ver filas Segun tipo de dato en una tabla\n";
