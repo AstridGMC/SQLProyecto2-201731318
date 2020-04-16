@@ -38,10 +38,8 @@ vector<TablaHash> Tabla :: AgregarColumnas(vector<Columna> columnas1, string nom
             tablasH.push_back(tablaHas1);
         }
     }
-    cout<<"\n" <<tablasH.size()<<" ORIG\n";
     tabla.setNombre(nombre);
     tabla.tablasHash = tablasH;
-    cout<< tabla.tablasHash.size();
     tabla.setColumnas(columnas1 );
     return tablasH;
 }

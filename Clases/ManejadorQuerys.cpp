@@ -70,7 +70,7 @@ vector<Fila> ManejadorQuerys :: separarColumnasAInsertar(vector<string> milista)
     vector<string> datos;
     int cont=  -1;
     int cont2=0;
-    for(int i=1; i< milista.size();++i){
+    for(int i=3; i< milista.size();++i){
         string palabra = split(milista.at(i), ',' ).at(0);
         
         if(cont > -1){

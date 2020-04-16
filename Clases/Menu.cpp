@@ -89,10 +89,12 @@ void Menu:: MenuQuerys(){
             cout << "     \n   Has elegido Hacer una Insercion\n";
             cout<<"  Ej. INSERT INTO table ( a, b, c) VALUES ( 1, 2, 3 ) ; \n";
             cout<<"Es importante respetar los espacios \n";
+            cout<<"Puedes insertar en las siguientes tablas:    \n";
+            manejador.ListarTablas();
             cin.ignore();
             getline(cin, imput, '\n');
             milista = split(imput,' ');
-            //manejador.InsertarFilas(milista);
+            manejador.InsertarFilas(milista);
             MenuQuerys();
             break;
         case '3':
